@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Employee Enrolment</title>
+</h:head>
+<h:body>
+    <h1>Enroll the New Employee</h1>
+    <h:form>
+        <h:outputLabel for="firstName" value="First Name " />
+        <h:inputText id="firstName" value="#{employeeEnrolment.employee.firstName}" />
+        <br/> <br/>
+
+        <h:outputLabel for="lastName" value="Last Name " />
+        <h:inputText id="lastName" value="#{employeeEnrolment.employee.lastName}" />
+        <br/> <br/>
+
+        <h:outputLabel for="age" value="Age " />
+        <h:inputText id="age" value="#{employeeEnrolment.employee.age}" />
+        <br/> <br/>
+
+        <h:outputLabel for="salary" value="Salary " />
+        <h:inputText id="salary" value="#{employeeEnrolment.employee.salary}" />
+        <br/> <br/>
+
+        <h:commandButton value="Submit"
+                         action="#{employeeEnrolment.submit}">
+            <f:ajax execute="@form" render=":table" />
+        </h:commandButton>
+    </h:form>
+</h:body>
+</html>

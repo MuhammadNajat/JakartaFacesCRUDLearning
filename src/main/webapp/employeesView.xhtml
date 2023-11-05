@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<head>
+   <title>All Employees' List</title>
+</head>
+
+<h:body>
+   <h:dataTable id="table" value="#{employeeEnrolment.employees}" var="employee">
+      <h:column><b>ID: </b>#{employee.id}</h:column>
+      <h:column>First Name: #{employee.firstName}</h:column>
+      <h:column>Last Name: #{employee.lastName}</h:column>
+      <h:column>Age: #{employee.age}</h:column>
+      <h:column>Salary: #{employee.salary}</h:column>
+   </h:dataTable>
+</h:body>
+
+</html>
