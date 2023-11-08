@@ -1,67 +1,53 @@
-///EmployeeService prev implementation
 package com.example.jsf01.service;
 
 import com.example.jsf01.model.Employee;
+import com.example.jsf01.repository.EmployeeRepository;
 import jakarta.ejb.Stateless;
 import jakarta.ejb.TransactionAttribute;
 import jakarta.ejb.TransactionAttributeType;
+import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 
 @Stateless
 public class EmployeeService {
-    @PersistenceContext
-    private EntityManager entityManager;
+    @Inject
+    private EmployeeRepository employeeRepository;
 
-    ///@TransactionAttribute(TransactionAttributeType.REQUIRED)
+    @Transactional
     public void create(Employee employee) {
-        entityManager.persist(employee);
+        System.out.println("### *** Entered EmployeeService::create");
+        employeeRepository.create(employee);
     }
 
-    public List<Employee> list() {
-        return entityManager
-                .createQuery("FROM Employee e", Employee.class)
-                .getResultList();
+    @Transactional
+    public Employee update(Employee employee) {
+        System.out.println("### *** Entered EmployeeService::update");
+        return employeeRepository.update(employee);
     }
 
-    public Employee findById(Long id) {
-        return entityManager.find(Employee.class, id);
+    @Transactional
+    public void delete(Employee employee) {
+        System.out.println("### *** Entered EmployeeService::delete");
+        employeeRepository.delete(employee);
     }
 
-    @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public boolean updateEmployee(Employee employee) {
+    @Transactional
+    public List<Employee> findAll() {
+        System.out.println("### *** Entered EmployeeService::findAll");
+        List<Employee> employees;
         try {
-            entityManager.merge(employee);
-            return true;
-        } catch (Exception e) {
+            employees = employeeRepository.findAll().get();
+        } catch(Exception e) {
             e.printStackTrace();
-            return false;
+            return  null;
         }
-    }
-
-    @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void deleteEmployee(Long id) {
-        System.out.println("### ### ### Entered deleteEmployee by id");
-        Employee employee = entityManager.find(Employee.class, id);
-        if (employee != null) {
-            try {
-                entityManager.remove(employee);
-            } catch(Exception exception) {
-                exception.printStackTrace();
-            }
-        }
-    }
-
-    @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void deleteEmployee(Employee employee) {
-        System.out.println("### ### ### Entered deleteEmployee by Employee");
-        try {
-            entityManager.remove(employee);
-        } catch (Exception exception) {
-            exception.printStackTrace();
-        }
+        return employees;
     }
 }

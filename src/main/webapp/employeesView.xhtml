@@ -22,8 +22,8 @@
       <!-- edittable table -->
       <p:growl id="msgs" showDetail="true"/>
       <div class="card">
-         <p:dataTable id="products1" var="employee" value="#{employeesView.employees}" editable="true"
-                      style="margin-bottom:20px">
+         <p:dataTable id="employees" var="employee" value="#{employeesView.employees}" editable="true"
+                      style="margin-bottom:20px" ajax="true">
             <p:ajax event="rowEdit" listener="#{employeesView.onRowUpdateRequest}" update=":form:msgs"/>
             <p:ajax event="rowEditCancel" listener="#{employeesView.onRowCancel}" update=":form:msgs"/>
 
@@ -80,8 +80,7 @@
             <p:column>
                <p:commandButton icon="pi pi-trash"
                                 title="Delete employee"
-                                action="#{employeesView.onRowDeleteRequest(employee)}"
-                                ajax="false">
+                                action="#{employeesView.onRowDeleteRequest(employee)}">
                   <f:param name="deletableEmployee" value="#{employee}" />
                   <p:confirm header="Confirmation" message="Delete the employee?" icon="pi pi-info-circle"/>
                </p:commandButton>
@@ -89,8 +88,8 @@
          </p:dataTable>
 
          <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="350">
-            <p:commandButton value="No" ajax="false" type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
-            <p:commandButton value="Yes" ajax="false" type="button" styleClass="ui-confirmdialog-yes" />
+            <p:commandButton value="No"  type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
+            <p:commandButton value="Yes"  type="button" styleClass="ui-confirmdialog-yes" />
          </p:confirmDialog>
 
       </div>

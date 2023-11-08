@@ -4,6 +4,7 @@ import com.example.jsf01.model.Employee;
 import com.example.jsf01.service.EmployeeService;
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.application.FacesMessage;
+import jakarta.faces.context.ExternalContext;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
@@ -11,6 +12,7 @@ import jakarta.inject.Named;
 import org.primefaces.event.CellEditEvent;
 import org.primefaces.event.RowEditEvent;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 
@@ -19,12 +21,14 @@ import java.util.List;
 public class EmployeesView implements Serializable {
     @Inject
     private EmployeeService employeeService;
+    @Inject
+    private ExternalContext externalContext;
 
     private List<Employee> employees;
 
     @PostConstruct
     public void init() {
-        employees = employeeService.list();
+        employees = employeeService.findAll();
     }
 
     public List<Employee> findAllEmployees() {
@@ -35,7 +39,7 @@ public class EmployeesView implements Serializable {
         try {
             Employee employee = event.getObject();
             String employeeDetail = employee.getId() + "\n" + employee.getFirstName() + employee.getLastName();
-            employeeService.updateEmployee(employee);
+            employeeService.update(employee);
             message = new FacesMessage("Employee Updated", employeeDetail);
         } catch (Exception exception) {
             exception.printStackTrace();
@@ -58,15 +62,14 @@ public class EmployeesView implements Serializable {
             message = new FacesMessage("Deleting Employee Failed", "");
         }
         FacesContext.getCurrentInstance().addMessage(null, message);
-    }*/
-
+    }
 
     public void onRowDeleteRequest(RowEditEvent<Employee> event) {
         System.out.println("\n\n\n*** Entered onDeleteReqyest 2\n\n\n");
         FacesMessage message;
         try {
             Employee employee = event.getObject();
-            employeeService.deleteEmployee(employee);
+            employeeService.delete(employee);
             String employeeDetail = employee.getId() + "\n" + employee.getFirstName() + employee.getLastName();
             message = new FacesMessage("Employee Deleted", employeeDetail);
         } catch (Exception exception) {
@@ -75,9 +78,10 @@ public class EmployeesView implements Serializable {
         }
         FacesContext.getCurrentInstance().addMessage(null, message);
     }
+    */
 
 
-    /*public void onRowDeleteRequest(Employee employee) {
+    public void onRowDeleteRequest(Employee employee) throws IOException {
         System.out.println("\n\n\n*** Entered onDeleteReqyest 3\n\n\n");
         FacesMessage message;
         try {
@@ -88,8 +92,10 @@ public class EmployeesView implements Serializable {
             exception.printStackTrace();
             message = new FacesMessage("Deleting Employee Failed", "");
         }
+        employees = employeeService.findAll();
         FacesContext.getCurrentInstance().addMessage(null, message);
-    }*/
+        externalContext.redirect("/JSF01-1.0-SNAPSHOT/employeesView.xhtml");
+    }
 
     public void onRowCancel(RowEditEvent<Employee> event) {
         Employee employee = event.getObject();

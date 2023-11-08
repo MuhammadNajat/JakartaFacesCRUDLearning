@@ -9,31 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d87ee308-a360-4c4b-b0da-5848331aec04" name="Changes" comment="Seperated employee enrolment view and employee list showing view">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/model/repositories/GenericRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/repository/EmployeeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/EmployeeUpdate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/EmployeesView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/deleteEmployee.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/employeeEnrolmentForm.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/custom/custom_button_design.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/primeblocks-app/primeflex/primeflex.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/primeblocks-app/primeflex/themes/arya.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/primeblocks-app/primeflex/themes/saga.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/primeblocks-app/primeflex/themes/vela.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/primeblocks/primeblocks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/updateEmployee.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="d87ee308-a360-4c4b-b0da-5848331aec04" name="Changes" comment="Create, Read, and Update enabled">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/model/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/service/EmployeeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/EmployeeEnrolment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/EmployeeEnrolment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/employeeEnrolment.xhtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/EmployeesView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/EmployeesView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/employeesView.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/employeesView.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/home.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +183,7 @@
       <workItem from="1699350324898" duration="7336000" />
       <workItem from="1699361917978" duration="551000" />
       <workItem from="1699426830733" duration="1328000" />
-      <workItem from="1699433334458" duration="8090000" />
+      <workItem from="1699433334458" duration="9715000" />
     </task>
     <task id="LOCAL-00001" summary="CRUD App Initial Commit">
       <option name="closed" value="true" />
@@ -220,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699186320230</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Create, Read, and Update enabled">
+      <option name="closed" value="true" />
+      <created>1699444957089</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699444957089</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +229,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="CRUD App Initial Commit" />
     <MESSAGE value="Seperated employee enrolment view and employee list showing view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Seperated employee enrolment view and employee list showing view" />
+    <MESSAGE value="Create, Read, and Update enabled" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create, Read, and Update enabled" />
   </component>
 </project>

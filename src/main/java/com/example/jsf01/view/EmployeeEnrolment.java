@@ -24,7 +24,7 @@ public class EmployeeEnrolment {
     @PostConstruct
     public void init() {
         try {
-            employees = employeeService.list();
+            employees = employeeService.findAll();
         } catch(Exception e) {
             e.printStackTrace();
             employees = null;
