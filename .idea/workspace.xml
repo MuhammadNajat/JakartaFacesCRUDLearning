@@ -9,15 +9,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d87ee308-a360-4c4b-b0da-5848331aec04" name="Changes" comment="CRUD App Initial Commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/model/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/service/EmployeeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/EmployeeEnrolment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/employeeEnrolment.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/employeesView.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/home.xhtml" afterDir="false" />
+    <list default="true" id="d87ee308-a360-4c4b-b0da-5848331aec04" name="Changes" comment="Seperated employee enrolment view and employee list showing view">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/model/repositories/GenericRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/repository/EmployeeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/EmployeeUpdate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/EmployeesView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/deleteEmployee.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/employeeEnrolmentForm.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/custom/custom_button_design.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/primeblocks-app/primeflex/primeflex.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/primeblocks-app/primeflex/themes/arya.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/primeblocks-app/primeflex/themes/saga.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/primeblocks-app/primeflex/themes/vela.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/primeblocks/primeblocks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/updateEmployee.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/model/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/service/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/EmployeeEnrolment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/EmployeeEnrolment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/employeeEnrolment.xhtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/employeesView.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/employeesView.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/home.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,24 +43,30 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
+        <option value="CSS File" />
         <option value="jsf" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../../../../Program Files/Java/jdk-17/lib/src.zip!/java.base/java/util/Map.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/jakarta/platform/jakarta.jakartaee-api/10.0.0/jakarta.jakartaee-api-10.0.0-sources.jar!/jakarta/faces/context/ExternalContext.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/employeesView.xhtml" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
-    <option name="CUSTOM_FILTER" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
+    <option name="CUSTOM_FILTER" value="" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2XkQczJNVaNlmwtv3quT1nvSY1x" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -60,17 +82,32 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "custom-crud",
+    "last_opened_file_path": "C:/Users/DSi/Downloads/ccms",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DSi\IdeaProjects\JSF01\src\main\webapp\resources\icons" />
+      <recent name="C:\Users\DSi\IdeaProjects\JSF01\src\main\webapp\resources\js\primeblocks" />
+      <recent name="C:\Users\DSi\IdeaProjects\JSF01\src\main\webapp\resources" />
+      <recent name="C:\Users\DSi\IdeaProjects\JSF01\src\main\webapp\resources\primeblocks-app\css\primeflex\themes" />
+      <recent name="C:\Users\DSi\IdeaProjects\JSF01\src\main\webapp\resources\primeblocks-app\css\primeflex" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DSi\IdeaProjects\JSF01\src\main\webapp\resources\css\primeblocks-app" />
+      <recent name="C:\Users\DSi\IdeaProjects\JSF01\src\main\webapp\resources" />
       <recent name="C:\Users\DSi\IdeaProjects\JSF01\src\main\webapp" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.jsf01.model.repositories" />
     </key>
   </component>
   <component name="RunManager">
@@ -159,7 +196,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699170687071</updated>
-      <workItem from="1699170688103" duration="11099000" />
+      <workItem from="1699170688103" duration="16171000" />
+      <workItem from="1699253511967" duration="20481000" />
+      <workItem from="1699339402417" duration="9551000" />
+      <workItem from="1699350324898" duration="7336000" />
+      <workItem from="1699361917978" duration="551000" />
+      <workItem from="1699426830733" duration="1328000" />
+      <workItem from="1699433334458" duration="8090000" />
     </task>
     <task id="LOCAL-00001" summary="CRUD App Initial Commit">
       <option name="closed" value="true" />
@@ -169,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699177323237</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Seperated employee enrolment view and employee list showing view">
+      <option name="closed" value="true" />
+      <created>1699186320230</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699186320230</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +239,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="CRUD App Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRUD App Initial Commit" />
+    <MESSAGE value="Seperated employee enrolment view and employee list showing view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Seperated employee enrolment view and employee list showing view" />
   </component>
 </project>

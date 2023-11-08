@@ -6,11 +6,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
-public class Employee {
+public class Employee implements Serializable {
     private static final long serialVersionUID = 2L;
 
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -21,9 +20,9 @@ public class Employee {
     @Column(nullable = false)
     private @NotNull String lastName;
 
-    private Integer age;
+    private @NotNull Integer age;
 
-    private Long salary;
+    private @NotNull Long salary;
 
     public Long getId() {
         return id;

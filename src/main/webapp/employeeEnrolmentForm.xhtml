@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Employee Enrolment</title>
+    <h:outputStylesheet name="css/primeblocks-app/primeflex/primeflex.css" />
+    <h:outputStylesheet name="css/primeblocks-app/primeflex/themes/saga.css" />
+    <h:outputScript name="js/primeblocks/primeblocks.js" />
+</h:head>
+<h:body>
+    <div class="flex align-items-center justify-content-center">
+        <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+            <div class="text-center mb-5">
+                <div class="text-900 text-3xl font-medium mb-3">Enroll A New Employee</div>
+
+            </div>
+            <h:form>
+
+                <label for="firstName" class="block text-900 font-medium mb-2;">First Name</label>
+                <p:inputText id="firstName" styleClass="w-full mb-3" placeholder="Example: John" value="#{employeeEnrolment.employee.firstName}" />
+                <br/> <br/>
+
+                <label for="lastName" class="block text-900 font-medium mb-2">Last Name</label>
+                <p:inputText id="lastName" styleClass="w-full mb-3" placeholder="Example: Doe"  value="#{employeeEnrolment.employee.lastName}" />
+                <br/> <br/>
+
+                <label for="age" class="block text-900 font-medium mb-2">Age</label>
+                <p:inputText id="age" styleClass="w-full mb-3" placeholder="Example: 48" value="#{employeeEnrolment.employee.age}" />
+                <br/> <br/>
+
+                <label for="salary" class="block text-900 font-medium mb-2">Salary in BDT</label>
+                <p:inputText id="salary" styleClass="w-full mb-3" placeholder="Example: 30000 " value="#{employeeEnrolment.employee.salary}" />
+                <br/> <br/>
+
+                <p:commandButton id="submit" value="Enroll" icon="pi pi-user" styleClass="w-full" action="#{employeeEnrolment.submit}" ajax="false"/>
+            </h:form>
+        </div>
+    </div>
+</h:body>
+</html>

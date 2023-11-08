@@ -6,9 +6,7 @@
     <persistence-unit name="PersistenceUnitName" transaction-type="JTA">
         <jta-data-source>java:global/DataSourceName</jta-data-source>
         <properties>
-            <property
-                    name="jakarta.persistence.schema-generation.database.action"
-                    value="drop-and-create" />
+            <property name="jakarta.persistence.schema-generation.database.action" value="create" />
         </properties>
     </persistence-unit>
 </persistence>

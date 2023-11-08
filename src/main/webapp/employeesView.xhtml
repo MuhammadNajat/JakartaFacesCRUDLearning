@@ -1,23 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+   <title>Employee Enrolment</title>
+   <h:outputStylesheet name="css/primeblocks-app/primeflex/primeflex.css" />
+   <h:outputStylesheet name="css/primeblocks-app/primeflex/themes/saga.css" />
+   <h:outputStylesheet name="css/custom/custom_button_design.css" />
+   <h:outputScript name="js/primeblocks/primeblocks.js" />
+   <!-- Adding PrimeIcons CSS from a CDN -->
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/primeicons/4.1.0/primeicons.min.css" />
 
-<head>
-   <title>All Employees' List</title>
-</head>
+</h:head>
 
 <h:body>
-   <h:dataTable id="table" value="#{employeeEnrolment.employees}" var="employee">
-      <h:column><b>ID: </b>#{employee.id}</h:column>
-      <h:column>First Name: #{employee.firstName}</h:column>
-      <h:column>Last Name: #{employee.lastName}</h:column>
-      <h:column>Age: #{employee.age}</h:column>
-      <h:column>Salary: #{employee.salary}</h:column>
-   </h:dataTable>
+   <h2>Employees</h2>
+   <h:form id="form">
+      <!-- edittable table -->
+      <p:growl id="msgs" showDetail="true"/>
+      <div class="card">
+         <p:dataTable id="products1" var="employee" value="#{employeesView.employees}" editable="true"
+                      style="margin-bottom:20px">
+            <p:ajax event="rowEdit" listener="#{employeesView.onRowUpdateRequest}" update=":form:msgs"/>
+            <p:ajax event="rowEditCancel" listener="#{employeesView.onRowCancel}" update=":form:msgs"/>
+
+            <p:column headerText="ID">
+               <h:outputText value="#{employee.id}"/>
+            </p:column>
+
+            <p:column headerText="First Name">
+               <p:cellEditor>
+                  <f:facet name="output">
+                     <h:outputText value="#{employee.firstName}"/>
+                  </f:facet>
+                  <f:facet name="input">
+                     <p:inputText value="#{employee.firstName}" style="width:100%" label="First Name"/>
+                  </f:facet>
+               </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="Last Name">
+               <p:cellEditor>
+                  <f:facet name="output"><h:outputText value="#{employee.lastName}"/></f:facet>
+                  <f:facet name="input">
+                     <p:inputText value="#{employee.lastName}" style="width:100%" label="Last Name"/>
+                  </f:facet>
+               </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="Age">
+               <p:cellEditor>
+                  <f:facet name="output"><h:outputText value="#{employee.age}"/></f:facet>
+                  <f:facet name="input">
+                     <p:inputNumber value="#{employee.age}" style="width:100%" label="Age"/>
+                  </f:facet>
+               </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="Salary">
+               <p:cellEditor>
+                  <f:facet name="output">
+                     <h:outputText value="#{employee.salary}">
+                        <f:convertNumber type="currency" currencySymbol="$"/>
+                     </h:outputText>
+                  </f:facet>
+                  <f:facet name="input">
+                     <p:inputNumber value="#{employee.salary}" style="width:100%" label="Salary" symbol="$"/>
+                  </f:facet>
+               </p:cellEditor>
+            </p:column>
+
+            <p:column style="width:6rem">
+               <p:rowEditor editTitle="Edit Row"  cancelTitle="Cancel Edit" saveTitle="Save Row"/>
+            </p:column>
+
+            <p:column>
+               <p:commandButton icon="pi pi-trash"
+                                title="Delete employee"
+                                action="#{employeesView.onRowDeleteRequest(employee)}"
+                                ajax="false">
+                  <f:param name="deletableEmployee" value="#{employee}" />
+                  <p:confirm header="Confirmation" message="Delete the employee?" icon="pi pi-info-circle"/>
+               </p:commandButton>
+            </p:column>
+         </p:dataTable>
+
+         <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="350">
+            <p:commandButton value="No" ajax="false" type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
+            <p:commandButton value="Yes" ajax="false" type="button" styleClass="ui-confirmdialog-yes" />
+         </p:confirmDialog>
+
+      </div>
+   </h:form>
 </h:body>
 
 </html>
