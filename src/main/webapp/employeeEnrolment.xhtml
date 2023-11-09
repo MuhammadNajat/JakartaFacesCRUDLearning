@@ -20,6 +20,7 @@
 
             </div>
             <h:form>
+                <p:growl id="message" showDetail="true"/>
 
                 <label for="firstName" class="block text-900 font-medium mb-2;">First Name</label>
                 <p:inputText id="firstName" styleClass="w-full mb-3" placeholder="Example: John" value="#{employeeEnrolment.employee.firstName}" />
@@ -33,8 +34,12 @@
                 <p:inputText id="age" styleClass="w-full mb-3" placeholder="Example: 48" value="#{employeeEnrolment.employee.age}" />
                 <br/> <br/>
 
-                <label for="salary" class="block text-900 font-medium mb-2">Salary in BDT</label>
+                <label for="salary" class="block text-900 font-medium mb-2">Salary in USD</label>
                 <p:inputText id="salary" styleClass="w-full mb-3" placeholder="Example: 30000 " value="#{employeeEnrolment.employee.salary}" />
+                <br/> <br/>
+
+                <label for="departmentId" class="block text-900 font-medium mb-2">Department ID</label>
+                <p:inputNumber id="departmentId" styleClass="w-full mb-3" placeholder="Example: 1" value="#{employeeEnrolment.inputDepartmentId}" />
                 <br/> <br/>
 
                 <p:commandButton id="submit" value="Enroll" icon="pi pi-user" styleClass="w-full" action="#{employeeEnrolment.submit}" ajax="false"/>

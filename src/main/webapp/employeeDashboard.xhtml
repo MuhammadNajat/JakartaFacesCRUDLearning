@@ -72,6 +72,15 @@
                </p:cellEditor>
             </p:column>
 
+            <p:column headerText="Department ID">
+               <p:cellEditor>
+                  <f:facet name="output"><h:outputText value="#{employee.department.id}"/></f:facet>
+                  <f:facet name="input">
+                     <p:inputNumber value="#{employeeDashboard.inputDepartmentId}" style="width:100%" label="Department"/>
+                  </f:facet>
+               </p:cellEditor>
+            </p:column>
+
             <p:column style="width:6rem">
                <p:rowEditor editTitle="Edit Row"  cancelTitle="Cancel Edit" saveTitle="Save Row"/>
             </p:column>

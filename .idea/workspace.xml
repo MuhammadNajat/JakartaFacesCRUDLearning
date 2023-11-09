@@ -9,31 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d87ee308-a360-4c4b-b0da-5848331aec04" name="Changes" comment="CRUD application created">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/models/entities/Department.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/models/repositories/DepartmentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/services/DepartmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/views/DepartmentDashboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/views/DepartmentEnrolment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/departmentEnrolment.xhtml" afterDir="false" />
+    <list default="true" id="d87ee308-a360-4c4b-b0da-5848331aec04" name="Changes" comment="CRUD application created for Employee and Department entities">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/models/entities/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/model/Message.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/model/repositories/GenericRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/common/models/repositories/GenericRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/models/repositories/EmployeeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/services/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/service/MessageService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/EmployeeEnrolment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/views/EmployeeEnrolment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/EmployeeUpdate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/EmployeesView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/views/EmployeeDashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/HelloWorld.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/deleteEmployee.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/departmentDashboard.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/employeeEnrolmentForm.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/employeeEnrolment.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/employeesView.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/employeeDashboard.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/hello.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/home.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/custom/custom_button_design.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/updateEmployee.xhtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/services/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/services/DepartmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/views/EmployeeDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/views/EmployeeDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/views/EmployeeEnrolment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/views/EmployeeEnrolment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/employeeDashboard.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/employeeDashboard.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/employeeEnrolment.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/employeeEnrolment.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +191,7 @@
       <workItem from="1699426830733" duration="1328000" />
       <workItem from="1699433334458" duration="9961000" />
       <workItem from="1699510566231" duration="10382000" />
-      <workItem from="1699523576285" duration="568000" />
+      <workItem from="1699523576285" duration="4132000" />
     </task>
     <task id="LOCAL-00001" summary="CRUD App Initial Commit">
       <option name="closed" value="true" />
@@ -243,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699446642521</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="CRUD application created for Employee and Department entities">
+      <option name="closed" value="true" />
+      <created>1699524365604</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699524365604</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +244,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="custom-crud" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -265,6 +267,7 @@
     <MESSAGE value="Seperated employee enrolment view and employee list showing view" />
     <MESSAGE value="Create, Read, and Update enabled" />
     <MESSAGE value="CRUD application created" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRUD application created" />
+    <MESSAGE value="CRUD application created for Employee and Department entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRUD application created for Employee and Department entities" />
   </component>
 </project>

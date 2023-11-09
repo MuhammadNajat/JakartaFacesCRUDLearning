@@ -32,6 +32,18 @@ public class DepartmentService {
     }
 
     @Transactional
+    public Department findById(Long id) {
+        Department department;
+        try {
+            department = departmentRepository.findById(id).get();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            department = null;
+        }
+        return department;
+    }
+
+    @Transactional
     public List<Department> findAll() {
         System.out.println("### *** Entered DepartmentService::findAll");
         List<Department> departments;

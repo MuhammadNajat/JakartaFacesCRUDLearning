@@ -1,6 +1,8 @@
 package com.example.jsf01.views;
 
+import com.example.jsf01.models.entities.Department;
 import com.example.jsf01.models.entities.Employee;
+import com.example.jsf01.services.DepartmentService;
 import com.example.jsf01.services.EmployeeService;
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.application.FacesMessage;
@@ -24,9 +26,13 @@ public class EmployeeDashboard implements Serializable {
     @Inject
     private EmployeeService employeeService;
     @Inject
+    private DepartmentService departmentService;
+    @Inject
     private ExternalContext externalContext;
 
     private List<Employee> employees;
+
+    private Long inputDepartmentId;
 
     @PostConstruct
     public void init() {
@@ -39,11 +45,19 @@ public class EmployeeDashboard implements Serializable {
 
     public void onRowUpdateRequest(RowEditEvent<Employee> event) {
         FacesMessage message;
+        String employeeDetail;
         try {
             Employee employee = event.getObject();
-            String employeeDetail = employee.getId() + "\n" + employee.getFirstName() + employee.getLastName();
-            employeeService.update(employee);
-            message = new FacesMessage("Employee Updated", employeeDetail);
+            Department department = departmentService.findById(inputDepartmentId);
+            if(department != null) {
+                employee.setDepartment(department);
+                employeeService.update(employee);
+                employeeDetail = employee.getId() + "\n" + employee.getFirstName() + employee.getLastName();
+                message = new FacesMessage("Employee Updated", employeeDetail);
+            }
+            else {
+                message = new FacesMessage("Invalid Department ID");
+            }
         } catch (Exception exception) {
             exception.printStackTrace();
             message = new FacesMessage("Updating Employee Failed", "");
@@ -94,5 +108,13 @@ public class EmployeeDashboard implements Serializable {
 
     public void setEmployees(List<Employee> employees) {
         this.employees = employees;
+    }
+
+    public Long getInputDepartmentId() {
+        return inputDepartmentId;
+    }
+
+    public void setInputDepartmentId(Long inputDepartmentId) {
+        this.inputDepartmentId = inputDepartmentId;
     }
 }
