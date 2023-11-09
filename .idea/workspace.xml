@@ -10,30 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d87ee308-a360-4c4b-b0da-5848331aec04" name="Changes" comment="CRUD application created">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/models/entities/Department.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/models/repositories/DepartmentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/services/DepartmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/views/DepartmentDashboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/views/DepartmentEnrolment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/departmentEnrolment.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/models/entities/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/model/Message.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/model/repositories/GenericRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/common/models/repositories/GenericRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/models/repositories/EmployeeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/services/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/service/MessageService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/EmployeeEnrolment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/views/EmployeeEnrolment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/EmployeeUpdate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/EmployeesView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jsf01/views/EmployeeDashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jsf01/view/HelloWorld.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/deleteEmployee.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/departmentDashboard.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/employeeEnrolmentForm.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/employeeEnrolment.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/employeesView.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/employeeDashboard.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/hello.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/home.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/custom/custom_button_design.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/updateEmployee.xhtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/departmentDashboard.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/departmentDashboard.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/employeeDashboard.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/employeeDashboard.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

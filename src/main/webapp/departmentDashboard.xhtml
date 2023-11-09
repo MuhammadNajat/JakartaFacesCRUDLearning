@@ -21,7 +21,17 @@
         <!-- edittable table -->
         <p:growl id="messages" showDetail="true"/>
         <div class="card">
-            <p:dataTable id="departments" var="department" value="#{departmentDashboard.departments}" editable="true" style="margin-bottom:20px" ajax="true">
+            <p:dataTable id="departments"
+                         var="department"
+                         value="#{departmentDashboard.departments}"
+                         editable="true"
+                         style="margin-bottom:20px"
+                         ajax="true"
+                         paginator="true"
+                         paginatorPosition="both"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records"
+                         rowsPerPageTemplate="5,10,{ShowAll|'All'}">
                 <p:ajax event="rowEdit" listener="#{departmentDashboard.onRowUpdateRequest}" update=":departmentsForm:messages"/>
                 <p:ajax event="rowEditCancel" listener="#{departmentDashboard.onRowCancel}" update=":departmentsForm:messages"/>
 
