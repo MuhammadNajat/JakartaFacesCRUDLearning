@@ -1,13 +1,12 @@
-package com.example.jsf01.view;
+package com.example.jsf01.views;
 
 import java.io.IOException;
 import java.util.List;
 
-import com.example.jsf01.model.Employee;
-import com.example.jsf01.service.EmployeeService;
+import com.example.jsf01.models.entities.Employee;
+import com.example.jsf01.services.EmployeeService;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.RequestScoped;
-import jakarta.faces.annotation.ManagedProperty;
 import jakarta.faces.context.ExternalContext;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
@@ -18,7 +17,6 @@ public class EmployeeEnrolment {
     @Inject
     private EmployeeService employeeService;
 
-    //@ManagedProperty("#{facesContext.externalContext}")
     @Inject
     private ExternalContext externalContext;
     @PostConstruct
@@ -32,7 +30,6 @@ public class EmployeeEnrolment {
     }
 
     public void submit() throws IOException {
-        //employeeService.updateEmployee(employee);
         employeeService.create(employee);
         employees.add(employee);
 

@@ -1,12 +1,10 @@
-package com.example.jsf01.model.repositories;
+package com.example.jsf01.common.models.repositories;
 
 import jakarta.ejb.TransactionAttribute;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
-///import org.apache.logging.log4j.LogManager;
-///import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 import java.util.Optional;

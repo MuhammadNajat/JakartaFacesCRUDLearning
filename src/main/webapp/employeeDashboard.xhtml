@@ -6,10 +6,9 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 <h:head>
-   <title>Employee Enrolment</title>
+   <title>Employee Dashboard</title>
    <h:outputStylesheet name="css/primeblocks-app/primeflex/primeflex.css" />
    <h:outputStylesheet name="css/primeblocks-app/primeflex/themes/saga.css" />
-   <h:outputStylesheet name="css/custom/custom_button_design.css" />
    <h:outputScript name="js/primeblocks/primeblocks.js" />
    <!-- Adding PrimeIcons CSS from a CDN -->
    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/primeicons/4.1.0/primeicons.min.css" />
@@ -19,13 +18,13 @@
 <h:body>
    <h2>Employees</h2>
    <h:form id="form">
-      <!-- edittable table -->
+      <!-- editable table -->
       <p:growl id="msgs" showDetail="true"/>
       <div class="card">
-         <p:dataTable id="employees" var="employee" value="#{employeesView.employees}" editable="true"
+         <p:dataTable id="employees" var="employee" value="#{employeeDashboard.employees}" editable="true"
                       style="margin-bottom:20px" ajax="true">
-            <p:ajax event="rowEdit" listener="#{employeesView.onRowUpdateRequest}" update=":form:msgs"/>
-            <p:ajax event="rowEditCancel" listener="#{employeesView.onRowCancel}" update=":form:msgs"/>
+            <p:ajax event="rowEdit" listener="#{employeeDashboard.onRowUpdateRequest}" update=":form:msgs"/>
+            <p:ajax event="rowEditCancel" listener="#{employeeDashboard.onRowCancel}" update=":form:msgs"/>
 
             <p:column headerText="ID">
                <h:outputText value="#{employee.id}"/>
@@ -80,7 +79,7 @@
             <p:column>
                <p:commandButton icon="pi pi-trash"
                                 title="Delete employee"
-                                action="#{employeesView.onRowDeleteRequest(employee)}">
+                                action="#{employeeDashboard.onRowDeleteRequest(employee)}">
                   <f:param name="deletableEmployee" value="#{employee}" />
                   <p:confirm header="Confirmation" message="Delete the employee?" icon="pi pi-info-circle"/>
                </p:commandButton>

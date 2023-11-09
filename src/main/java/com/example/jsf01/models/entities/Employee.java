@@ -1,12 +1,9 @@
-package com.example.jsf01.model;
+package com.example.jsf01.models.entities;
 
 import java.io.Serializable;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 @Entity
 public class Employee implements Serializable {
@@ -15,14 +12,28 @@ public class Employee implements Serializable {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
-    private @NotNull String firstName;
+    @Size(min = 1, max = 15)
+    @Pattern(regexp = "^[A-Za-z ]+$", message = "Name can only contain alphabets and spaces")
+    @NotNull
+    private String firstName;
 
     @Column(nullable = false)
-    private @NotNull String lastName;
+    @Size(min = 1, max = 15)
+    @Pattern(regexp = "^[A-Za-z ]+$", message = "Name can only contain alphabets and spaces")
+    @NotNull
+    private String lastName;
 
-    private @NotNull Integer age;
+    @NotNull
+    @Min(1) @Max(200)
+    private Integer age;
 
-    private @NotNull Long salary;
+    @NotNull
+    @Min(0) @Max(2000000000)
+    private Long salary;
+
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    Department department;
 
     public Long getId() {
         return id;
@@ -62,5 +73,13 @@ public class Employee implements Serializable {
 
     public void setSalary(Long salary) {
         this.salary = salary;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 }

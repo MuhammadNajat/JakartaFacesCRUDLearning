@@ -1,19 +1,12 @@
-package com.example.jsf01.service;
+package com.example.jsf01.services;
 
-import com.example.jsf01.model.Employee;
-import com.example.jsf01.repository.EmployeeRepository;
+import com.example.jsf01.models.entities.Employee;
+import com.example.jsf01.models.repositories.EmployeeRepository;
 import jakarta.ejb.Stateless;
-import jakarta.ejb.TransactionAttribute;
-import jakarta.ejb.TransactionAttributeType;
 import jakarta.inject.Inject;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
 
 @Stateless
 public class EmployeeService {

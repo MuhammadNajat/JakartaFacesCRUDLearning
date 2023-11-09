@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Department Dashboard</title>
+    <h:outputStylesheet name="css/primeblocks-app/primeflex/primeflex.css" />
+    <h:outputStylesheet name="css/primeblocks-app/primeflex/themes/saga.css" />
+    <h:outputScript name="js/primeblocks/primeblocks.js" />
+    <!-- Adding PrimeIcons CSS from a CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/primeicons/4.1.0/primeicons.min.css" />
+
+</h:head>
+
+<h:body>
+    <h2>Departments</h2>
+    <h:form id="departmentsForm">
+        <!-- edittable table -->
+        <p:growl id="messages" showDetail="true"/>
+        <div class="card">
+            <p:dataTable id="departments" var="department" value="#{departmentDashboard.departments}" editable="true" style="margin-bottom:20px" ajax="true">
+                <p:ajax event="rowEdit" listener="#{departmentDashboard.onRowUpdateRequest}" update=":departmentsForm:messages"/>
+                <p:ajax event="rowEditCancel" listener="#{departmentDashboard.onRowCancel}" update=":departmentsForm:messages"/>
+
+                <p:column headerText="ID">
+                    <h:outputText value="#{department.id}"/>
+                </p:column>
+
+                <p:column headerText="Name">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{department.name}"/>
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:inputText value="#{department.name}" style="width:100%" label="Name"/>
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column headerText="Description">
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{department.description}"/></f:facet>
+                        <f:facet name="input">
+                            <p:inputText value="#{department.description}" style="width:100%" label="Description"/>
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column style="width:6rem">
+                    <p:rowEditor editTitle="Edit Row"  cancelTitle="Cancel Edit" saveTitle="Save Row"/>
+                </p:column>
+
+                <p:column>
+                    <p:commandButton icon="pi pi-trash"
+                                     title="Delete Department"
+                                     action="#{departmentDashboard.onRowDeleteRequest(department)}">
+                        <p:confirm header="Confirmation" message="Delete the department?" icon="pi pi-info-circle"/>
+                    </p:commandButton>
+                </p:column>
+            </p:dataTable>
+
+            <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="350">
+                <p:commandButton value="No"  type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
+                <p:commandButton value="Yes"  type="button" styleClass="ui-confirmdialog-yes" />
+            </p:confirmDialog>
+
+        </div>
+    </h:form>
+</h:body>
+
+</html>
